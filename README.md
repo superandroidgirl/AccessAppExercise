@@ -43,3 +43,7 @@
 		- MainActivity			(User list page)
 		- UserListAdapter		(Users adapter)
 		- UserDetailActivity	(User detail page)
+## Third Party
+- Retrofit2
+- Glide
+- Parceler
