@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.kotlinsample.base.BaseViewModel
 import com.example.kotlinsample.model.UserDetail
 import com.example.kotlinsample.model.UserInfo
-import com.example.kotlinsample.model.Weather
 import com.example.kotlinsample.repository.UserRepository
 import kotlinx.coroutines.launch
 
