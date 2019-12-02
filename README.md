@@ -1,8 +1,45 @@
 # AccessAppExercise
 
-- 使用Kotlin語法撰寫
-- 列表使用分頁的方式去load,一頁20筆,當頁面數量小於(總數量 - 5)時,就會call API再去load下一頁的資料
-- 全部列表總共100筆，滿100不再增加
-- 有加入防止連點使用者多開頁面的部分
-- 列點點擊使用者時，是先call Userdetail那隻API確定回傳值不是空的或是null才會跳頁
-- 使用者詳細頁的blog點擊後會利用手機原生的瀏覽器外開網頁瀏覽
+## Feature
+ * Environment
+- Android Studio 3.5
+- Compile SDK Version 29
+- Kotlin 1.3.50
+ * Page introduction
+- User list page
+	- item
+		- user image
+		- user login(name)
+		- staff or not
+	- Paginated 
+	- Start with since=0, page size = 20
+	- Limit to 100 users
+	- Avoid to click double item
+- User detail page
+	- item
+		- user image
+		- user name
+		- user bio
+		- user login (name)
+		- staff or not
+		- location
+		- blog
+	- when click blog link will open outside webview
+
+- Architecture
+	- MVVM
+	- Model
+		- UserInfo (user lists data)
+		- UserDetail (user detail info)
+	- ViewModel
+		- MainViewModel
+			- loadUserList 		(get first users array)
+			- loadMoreUserList	(get more users array)
+			- loadUserDetail	(get user's info)
+		- UserRepository	(make a api service)
+		- Api 				(each api path and parameters)
+
+	- View
+		- MainActivity			(User list page)
+		- UserListAdapter		(Users adapter)
+		- UserDetailActivity	(User detail page)
